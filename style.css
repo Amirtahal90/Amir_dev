@@ -755,3 +755,93 @@ a {
     width: 100%;
   }
 }
+
+
+
+/* جلوگیری از اسکرول افقی و زوم/بیرون‌زدگی در موبایل */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img, video, iframe, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.container,
+.hero-grid,
+.about-grid,
+.services-grid,
+.skills-grid,
+.projects-grid,
+.contact-grid,
+.timeline {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* جلوگیری از بیرون زدن متن و کارت‌ها */
+h1, h2, h3, p, a, span, div, section, article, aside {
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* تنظیم موبایل */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    padding-inline: 16px;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .services-grid,
+  .skills-grid,
+  .projects-grid,
+  .contact-grid,
+  .timeline {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-content,
+  .hero-card,
+  .contact-panel,
+  .contact-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  .input-row input,
+  .input-group input,
+  .input-group textarea {
+    width: 100%;
+  }
+
+  .profile-image,
+  .profile-image-wrap {
+    width: 100%;
+    max-width: 100%;
+  }
+}
